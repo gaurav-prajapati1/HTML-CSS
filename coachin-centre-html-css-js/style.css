@@ -1,0 +1,234 @@
+/* Basic Setup */
+:root {
+    --primary-color: #007BFF; /* Main blue color */
+    --dark-color: #333;
+    --light-color: #f4f4f4;
+    --white-color: #fff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    /* Page load par smooth fade-in animation */
+    animation: fadeIn 1s ease-in-out;
+}
+
+html {
+    scroll-behavior: smooth; /* Links par click karke smooth scroll */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background: var(--dark-color);
+    color: var(--white-color);
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 4px solid var(--primary-color);
+    
+    /* Header ko page scroll par upar fix rakhega */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    animation: slideInDown 0.5s ease-out;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex; /* Menu items ko flexbox se align karein */
+    justify-content: center;
+    align-items: center;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Menu links par hover effect */
+header nav ul li a:hover {
+    background: var(--primary-color);
+}
+
+/* Login/Register Buttons ki styling */
+.nav-button {
+    background: var(--primary-color);
+    border: none;
+    padding: 8px 15px !important; /* Overwrite padding */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background: #0056b3; /* Thoda dark blue */
+    transform: translateY(-2px); /* Button upar uthega */
+}
+
+/* --- Main Sections --- */
+main {
+    padding-top: 20px;
+}
+
+section {
+    background: var(--white-color);
+    margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    
+    /* Sections ke liye Animation */
+    opacity: 0; /* Shuru mein invisible */
+    transform: translateY(20px); /* Thoda neeche se */
+    animation: slideInUp 0.7s ease-out forwards;
+}
+
+/* Alag-alag section mein delay taaki woh ek ke baad ek aayein */
+#about { animation-delay: 0.2s; }
+#courses { animation-delay: 0.4s; }
+#contact { animation-delay: 0.6s; }
+
+section h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--light-color);
+    padding-bottom: 10px;
+}
+
+/* Courses list par hover effect */
+#courses ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#courses li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#courses li:hover {
+    transform: translateX(10px); /* Right mein move karega */
+    background: #f9f9f9;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--dark-color);
+    color: var(--white-color);
+    margin-top: 20px;
+}
+
+/* --- Login/Register Form Styling --- */
+.form-container {
+    max-width: 500px;
+    margin: 40px auto; /* Page ke center mein */
+    padding: 30px;
+    background: var(--white-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    animation: slideInUp 0.7s ease-out;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Padding ko width mein include karega */
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.form-container p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-container p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- Keyframe Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
