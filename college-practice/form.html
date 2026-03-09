@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Student Records</title>
+    <style>
+        /* A4 Page Setup */
+        body {
+            background-color: #d1d8e0;
+            margin: 0;
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .a4-sheet {
+            width: 210mm; 
+            min-height: 297mm;
+            background: white;
+            padding: 25mm;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            box-sizing: border-box;
+            border-top: 10px solid #1e3799; 
+        }
+
+        /* Header Styling */
+        .header-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 28px;
+            color: #1e3799;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: #778ca3;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px; 
+        }
+
+        th {
+            background-color: transparent;
+            color: #4b6584;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 15px;
+            border-bottom: 2px solid #f1f2f6;
+        }
+
+        tbody tr {
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+
+        tbody tr:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        }
+
+        td {
+            padding: 15px;
+            color: #2f3542;
+            font-size: 14px;
+            border-top: 1px solid #f1f2f6;
+            border-bottom: 1px solid #f1f2f6;
+        }
+
+        /* Row accents */
+        td:first-child { 
+            border-left: 1px solid #f1f2f6; 
+            border-radius: 8px 0 0 8px; 
+            font-weight: bold; 
+            color: #1e3799; 
+        }
+        td:last-child { 
+            border-right: 1px solid #f1f2f6; 
+            border-radius: 0 8px 8px 0; 
+            text-align: center;
+        }
+
+        /* Badge Styling */
+        .status-badge {
+            background: linear-gradient(135deg, #1e3799 0%, #4facfe 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            display: inline-block;
+            min-width: 60px;
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .a4-sheet { box-shadow: none; width: 100%; margin: 0; border-top: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="a4-sheet">
+    <div class="header-section">
+        <h2>Student Details</h2>
+        <div class="subtitle">Official Academic Record | Session 2024-25</div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 10%">S.No</th>
+                <th style="width: 20%">Roll No</th>
+                <th style="width: 45%">Student Name</th>
+                <th style="width: 25%">Course</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>01</td><td>101</td><td>Rahul Sharma</td><td><span class="status-badge">BCA</span></td></tr>
+            <tr><td>02</td><td>102</td><td>Priya Singh</td><td><span class="status-badge">BBA</span></td></tr>
+            <tr><td>03</td><td>103</td><td>Amit Kumar</td><td><span class="status-badge">B.Tech</span></td></tr>
+            <tr><td>04</td><td>104</td><td>Neha Verma</td><td><span class="status-badge">B.Com</span></td></tr>
+            <tr><td>05</td><td>105</td><td>Rohan Gupta</td><td><span class="status-badge">BCA</span></td></tr>
+            <tr><td>06</td><td>106</td><td>Sneha Patel</td><td><span class="status-badge">BBA</span></td></tr>
+            <tr><td>07</td><td>107</td><td>Arjun Mehta</td><td><span class="status-badge">B.Tech</span></td></tr>
+            <tr><td>08</td><td>108</td><td>Kavita Joshi</td><td><span class="status-badge">B.Com</span></td></tr>
+            <tr><td>09</td><td>109</td><td>Vikas Yadav</td><td><span class="status-badge">BCA</span></td></tr>
+            <tr><td>10</td><td>110</td><td>Pooja Sharma</td><td><span class="status-badge">BBA</span></td></tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
