@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Swapper</title>
+    <style>
+        /* CSS: Making it look clean and modern */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f7f6;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        h2 { color: #333; margin-bottom: 20px; }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 80px;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+            outline: none;
+        }
+
+        input:focus { border-color: #007bff; }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover { background-color: #0056b3; }
+
+        .result-box {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            min-height: 80px;
+            line-height: 1.6;
+        }
+
+        #beforeText { color: #666; margin: 5px 0; }
+        #afterText { color: #28a745; font-weight: bold; font-size: 18px; margin: 5px 0; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Swap Logic</h2>
+        
+        <div class="input-group">
+            <div>
+                <label>A</label><br>
+                <input type="number" id="numA" value="10">
+            </div>
+            <div>
+                <label>B</label><br>
+                <input type="number" id="numB" value="12">
+            </div>
+        </div>
+
+        <button onclick="handleSwap()">Swap Variables</button>
+
+        <div class="result-box">
+            <p id="beforeText">Enter numbers and click swap!</p>
+            <p id="afterText"></p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript: The logic to perform the swap and update the UI
+        function handleSwap() {
+            // 1. Grab the current values from the input fields
+            let a = document.getElementById('numA').value;
+            let b = document.getElementById('numB').value;
+
+            // Check if inputs are empty
+            if (a === "" || b === "") {
+                alert("Please fill in both numbers.");
+                return;
+            }
+
+            // 2. Show the "Before" state exactly as you requested
+            document.getElementById('beforeText').innerText = `Before: A = ${a} B = ${b}`;
+
+            // 3. Perform the swap using the Temporary Variable method
+            let temp = a;
+            a = b;
+            b = temp;
+
+            // 4. Update the input fields so the user sees the physical swap
+            document.getElementById('numA').value = a;
+            document.getElementById('numB').value = b;
+
+            // 5. Show the "After" state
+            document.getElementById('afterText').innerText = `After: A = ${a} B = ${b}`;
+        }
+    </script>
+
+</body>
+</html>

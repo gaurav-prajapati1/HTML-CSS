@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whitespace Remover</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 2px solid #ced4da;
+            border-radius: 8px;
+            box-sizing: border-box;
+            resize: none;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #e84393;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        button:hover { background-color: #d63031; }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f2f6;
+            border-radius: 8px;
+            word-break: break-all;
+            min-height: 40px;
+            font-weight: bold;
+            color: #2d3436;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Whitespace Remover</h2>
+    <textarea id="inputText" placeholder="Enter text with spaces..."></textarea>
+    <button onclick="removeSpaces()">Remove All Spaces</button>
+    
+    <div id="output" id="result">Result will appear here...</div>
+</div>
+
+<script>
+    function removeSpaces() {
+        const input = document.getElementById('inputText').value;
+        const outputDiv = document.getElementById('output');
+
+        if (!input) {
+            outputDiv.innerText = "Please enter some text!";
+            return;
+        }
+
+        /* The Regex Logic:
+           \s  -> matches any whitespace (space, tab, newline)
+           /g  -> global flag (finds all instances, not just the first one)
+           ""  -> replaces them with nothing
+        */
+        const result = input.replace(/\s/g, "");
+
+        outputDiv.innerText = result;
+    }
+</script>
+
+</body>
+</html>

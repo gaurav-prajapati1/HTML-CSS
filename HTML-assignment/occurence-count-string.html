@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Occurrence Counter</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .char-input {
+            width: 40px !important;
+            text-align: center;
+        }
+
+        button {
+            background-color: #6c5ce7;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #a29bfe;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2d3436;
+        }
+
+        .highlight {
+            color: #6c5ce7;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Character Counter</h2>
+    
+    <label>Enter a String:</label><br>
+    <input type="text" id="mainString" placeholder="Example: Hello World"><br>
+    
+    <label>Character to find:</label><br>
+    <input type="text" id="targetChar" class="char-input" maxlength="1" placeholder="l"><br>
+    
+    <button onclick="countOccurrence()">Count Now</button>
+    
+    <div id="result"></div>
+</div>
+
+<script>
+    function countOccurrence() {
+        // 1. Get input values
+        const str = document.getElementById('mainString').value;
+        const char = document.getElementById('targetChar').value;
+        const resultDiv = document.getElementById('result');
+
+        // Validation
+        if (!str || !char) {
+            resultDiv.innerHTML = "Please enter both a string and a character.";
+            return;
+        }
+
+        // 2. The Logic: Loop through the string
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+            // Check if the current character matches the target
+            if (str.charAt(i) === char) {
+                count++;
+            }
+        }
+
+        // 3. Display the result
+        resultDiv.innerHTML = `The character '<span class="highlight">${char}</span>' appears <span class="highlight">${count}</span> times.`;
+    }
+</script>
+
+</body>
+</html>

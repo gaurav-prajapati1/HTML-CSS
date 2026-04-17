@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Boundary Checker</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #e0eafc;
+            background: linear-gradient(to right, #cfdef3, #e0eafc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+
+        h2 { color: #2c3e50; text-align: center; }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .check-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover { background-color: #2980b9; }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            display: none; /* Hidden by default */
+        }
+
+        .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; display: block !important; }
+        .failure { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; display: block !important; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>String Checker</h2>
+    
+    <label>Main Text:</label>
+    <input type="text" id="mainText" class="input-field" placeholder="Enter full text...">
+    
+    <div class="check-group">
+        <div>
+            <label>Starts With:</label>
+            <input type="text" id="startChar" class="input-field" placeholder="e.g. H">
+        </div>
+        <div>
+            <label>Ends With:</label>
+            <input type="text" id="endChar" class="input-field" placeholder="e.g. !">
+        </div>
+    </div>
+    
+    <button onclick="checkString()">Validate String</button>
+    
+    <div id="result"></div>
+</div>
+
+<script>
+    function checkString() {
+        const text = document.getElementById('mainText').value;
+        const start = document.getElementById('startChar').value;
+        const end = document.getElementById('endChar').value;
+        const resultDiv = document.getElementById('result');
+
+        // Validation: ensure main text isn't empty
+        if (!text) {
+            resultDiv.innerText = "Please enter some main text first.";
+            resultDiv.className = "failure";
+            return;
+        }
+
+        // Logic: Using startsWith() and endsWith()
+        const startsCorrect = text.startsWith(start);
+        const endsCorrect = text.endsWith(end);
+
+        if (startsCorrect && endsCorrect) {
+            resultDiv.innerText = "✅ Success! Both conditions met.";
+            resultDiv.className = "success";
+        } else if (startsCorrect) {
+            resultDiv.innerText = "⚠️ Starts correctly, but ends wrong.";
+            resultDiv.className = "failure";
+        } else if (endsCorrect) {
+            resultDiv.innerText = "⚠️ Ends correctly, but starts wrong.";
+            resultDiv.className = "failure";
+        } else {
+            resultDiv.innerText = "❌ Neither condition is met.";
+            resultDiv.className = "failure";
+        }
+    }
+</script>
+
+</body>
+</html>

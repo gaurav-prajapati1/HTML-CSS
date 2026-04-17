@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            width: 450px;
+            text-align: center;
+        }
+        .input-section {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 80px;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            text-align: center;
+        }
+        button {
+            background-color: #00b894;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+            transition: 0.3s;
+        }
+        button:hover { background-color: #00947a; }
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #dfe6e9;
+            border-radius: 6px;
+            word-wrap: break-word;
+            font-family: monospace;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Range Generator</h2>
+    <p>Enter start and end (Numbers or Letters)</p>
+    
+    <div class="input-section">
+        <input type="text" id="start" placeholder="Start">
+        <input type="text" id="end" placeholder="End">
+    </div>
+
+    <button onclick="generateRange()">Generate Range</button>
+
+    <div id="output">Result will appear here...</div>
+</div>
+
+<script>
+    function generateRange() {
+        let start = document.getElementById('start').value;
+        let end = document.getElementById('end').value;
+        const output = document.getElementById('output');
+
+        if (start === "" || end === "") {
+            output.innerHTML = "Error: Please fill both fields.";
+            return;
+        }
+
+        let range = [];
+
+        // Check if inputs are numbers
+        if (!isNaN(start) && !isNaN(end)) {
+            let s = parseInt(start);
+            let e = parseInt(end);
+            
+            // Logic for Number Range
+            if (s <= e) {
+                for (let i = s; i <= e; i++) range.push(i);
+            } else {
+                for (let i = s; i >= e; i--) range.push(i);
+            }
+        } 
+        // Logic for Character Range
+        else {
+            let s = start.charCodeAt(0);
+            let e = end.charCodeAt(0);
+
+            if (s <= e) {
+                for (let i = s; i <= e; i++) range.push(String.fromCharCode(i));
+            } else {
+                for (let i = s; i >= e; i--) range.push(String.fromCharCode(i));
+            }
+        }
+
+        output.innerHTML = "<strong>Result:</strong> " + range.join(", ");
+    }
+</script>
+
+</body>
+</html>
