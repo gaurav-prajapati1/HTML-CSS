@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Andrew's Institute - Full Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        header {
+            background: #003366; /* SAITM Theme Color */
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #f1c40f;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: #222;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #f1c40f;
+            margin: 0 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 8px solid #003366;
+        }
+
+        h2 {
+            color: #003366;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: #003366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>St. Andrew's Institute of Technology and Management</h1>
+        <p>Approved by AICTE | Affiliated to MDU, Rohtak</p>
+    </header>
+
+    <nav>
+        <a href="#courses">Our Courses</a>
+        <a href="#departments">Departments</a>
+        <a href="#faculties">Faculties</a>
+        <a href="#library">Library</a>
+        <a href="https://saitm.ac.in/" target="_blank">Official Portal</a>
+    </nav>
+
+    <div class="container">
+        <div class="grid-layout">
+            
+            <section id="courses">
+                <h2>Academic Programs</h2>
+                <ul>
+                    <li><strong>BCA</strong> - Bachelor of Computer Applications</li>
+                    <li><strong>BBA</strong> - Bachelor of Business Administration</li>
+                    <li><strong>B.Tech</strong> - CS, IT, ME, Civil, ECE</li>
+                    <li><strong>MCA</strong> - Master of Computer Applications</li>
+                    <li><strong>MBA</strong> - Master of Business Administration</li>
+                    <li><strong>M.Tech</strong> - Advanced Technical Studies</li>
+                </ul>
+            </section>
+
+            <section id="departments">
+                <h2>Our Departments</h2>
+                <ol>
+                    <li>School of Engineering & Technology</li>
+                    <li>School of Management & Commerce</li>
+                    <li>Department of Computer Applications</li>
+                    <li>Department of Applied Sciences</li>
+                </ol>
+            </section>
+
+            <section id="faculties">
+                <h2>Distinguished Faculties</h2>
+                <p>Learn from industry experts and highly qualified professors with deep research backgrounds.</p>
+                <a href="mailto:admission@saitm.ac.in" class="contact-btn">Email Faculty Dept</a>
+            </section>
+
+            <section id="library">
+                <h2>Library & E-Resources</h2>
+                <p>Access thousands of journals and books in our state-of-the-art facility.</p>
+                <ul>
+                    <li>24/7 Digital Library Access</li>
+                    <li>Reference Section with 25,000+ volumes</li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 St. Andrew's Institute of Technology and Management | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

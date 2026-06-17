@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAITM Portal Screenshot View</title>
+    <style>
+        /* Pura background white space ke liye */
+        body {
+            background-color: #f0f0f0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Beech wala compact box */
+        .frame-container {
+            width: 900px; /* Aap width yahan se control kar sakte hain */
+            height: 600px; /* Aap height yahan se control kar sakte hain */
+            background: white;
+            border: 10px solid #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header-frame { height: 80px; width: 100%; border: none; border-bottom: 2px solid #ccc; }
+        .middle-section { display: flex; flex: 1; }
+        .left-frame { width: 200px; border: none; border-right: 2px solid #ccc; }
+        .right-frame { flex: 1; border: none; }
+        .status-frame { height: 40px; width: 100%; border: none; border-top: 2px solid #ccc; }
+    </style>
+</head>
+<body>
+
+    <div class="frame-container">
+        <iframe src="header.html" class="header-frame"></iframe>
+
+        <div class="middle-section">
+            <iframe src="left.html" class="left-frame" name="left_frame"></iframe>
+            <iframe src="right.html" class="right-frame" name="right_frame"></iframe>
+        </div>
+
+        <iframe src="status.html" class="status-frame"></iframe>
+    </div>
+
+</body>
+</html>

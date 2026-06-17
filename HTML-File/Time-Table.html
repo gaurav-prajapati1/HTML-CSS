@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Time-Table</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        table {
+            width: 100%;
+            max-width: 1100px;
+            border-collapse: collapse;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        caption {
+            font-size: 26px;
+            font-weight: bold;
+            padding: 20px;
+            color: #1a2a6c;
+            background: #fff;
+            text-transform: uppercase;
+        }
+
+        th {
+            background-color: #1a2a6c;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 15px;
+            border: 1px solid #2a3a7c;
+            font-size: 13px;
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            color: #444;
+            font-weight: 500;
+        }
+
+        .day-column {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: #1a2a6c;
+            width: 120px;
+        }
+
+        .lunch-break {
+            background-color: #ff4757 !important;
+            color: white !important;
+            font-weight: 900;
+            letter-spacing: 5px;
+            font-size: 20px;
+            /* Vertical text for lunch column */
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+        }
+
+        .holiday {
+            background-color: #f1f2f6;
+            color: #a4b0be;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+
+        tr:hover {
+            background-color: #f1f2f6;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <caption>Class Time-Table</caption>
+        <thead>
+            <tr>
+                <th>Day / Time</th>
+                <th>2:00 PM - 2:40 PM</th>
+                <th>2:40 PM - 3:20 PM</th>
+                <th>3:20 PM - 4:00 PM</th>
+                <th style="background-color: #e84118;">4:00 PM - 4:40 PM</th>
+                <th>4:40 PM - 5:20 PM</th>
+                <th>5:20 PM - 6:00 PM</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="day-column">Monday</td>
+                <td>Data Structure</td>
+                <td>Operating System</td>
+                <td>Mathematics</td>
+                <td rowspan="4" class="lunch-break">LUNCH</td>
+                <td>Web Technologies</td>
+                <td>OOPS Java</td>
+            </tr>
+            <tr>
+                <td class="day-column">Tuesday</td>
+                <td>OOPS Java</td>
+                <td>Indian Constitution</td>
+                <td>Web Technologies</td>
+                <td>Operating System</td>
+                <td>Mathematics</td>
+            </tr>
+            <tr>
+                <td class="day-column">Wednesday</td>
+                <td>Mathematics</td>
+                <td>Data Structure</td>
+                <td>OOPS Java</td>
+                <td>Indian Constitution</td>
+                <td>Web Technologies</td>
+            </tr>
+            <tr>
+                <td class="day-column">Thursday</td>
+                <td>Web Technologies</td>
+                <td>Mathematics</td>
+                <td>Operating System</td>
+                <td>Data Structure</td>
+                <td>Indian Constitution</td>
+            </tr>
+            <tr>
+                <td class="day-column">Friday</td>
+                <td colspan="6" class="holiday">COLLEGE LEAVE</td>
+            </tr>
+            <tr>
+                <td class="day-column">Saturday</td>
+                <td colspan="6" class="holiday">COLLEGE LEAVE</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
